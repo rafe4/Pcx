@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{0B328DE7-51D3-3E18-9698-3221E6F7F674}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/00 Agent Work/SCRIPTS/Agent/MasterEmotion.cs">
+    <Files>
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/Sub_VFX.cs" Line="38" Column="1" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/Sub_Ui.cs" Line="40" Column="6" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/Sub_Movement.cs" Line="13" Column="1" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/Sub_ColourManager.cs" Line="18" Column="6" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/MasterMediator.cs" Line="12" Column="56" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/MasterStateManager.cs" Line="25" Column="6" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/MasterEmotion.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="253e9293-6880-4dcd-aa1a-0af849271247" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
