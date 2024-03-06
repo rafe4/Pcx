@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{0B328DE7-51D3-3E18-9698-3221E6F7F674}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/00 Agent Work/SCRIPTS/Agent/MasterEmotion.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/00 Agent Work/SCRIPTS/GPTx11Labs/DiscussionManager.cs">
     <Files>
-      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/Sub_VFX.cs" Line="38" Column="1" />
-      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/Sub_Ui.cs" Line="40" Column="6" />
-      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/Sub_Movement.cs" Line="13" Column="1" />
-      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/Sub_ColourManager.cs" Line="18" Column="6" />
-      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/MasterMediator.cs" Line="12" Column="56" />
-      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/MasterStateManager.cs" Line="25" Column="6" />
-      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/MasterEmotion.cs" Line="1" Column="1" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/NewOpenAi/DiscussionManager.cs" Line="207" Column="1" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/UI/uiBar.cs" Line="15" Column="24" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/UI/sub_Settings_Ui.cs" Line="10" Column="32" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/UI/sub_Tools_Ui.cs" Line="33" Column="1" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/ui_HomeButton.cs" Line="19" Column="25" NotebookId="1" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/GPTx11Labs/VoiceManager2.cs" Line="42" Column="1" NotebookId="1" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/MasterEmotion.cs" Line="32" Column="1" NotebookId="1" />
+      <File FileName="Assets/00 Agent Work/SCRIPTS/Agent/MasterMediator.cs" Line="65" Column="4" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="253e9293-6880-4dcd-aa1a-0af849271247" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4202b3b6-5646-4e36-b7f5-0cf8263ad5be" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

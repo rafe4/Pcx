@@ -14,11 +14,14 @@ public class MasterStateManager : MonoBehaviour
 
     public enum AgentState
     {
-        Moving,
+        Dormant,
+        Dreaming,
+        Talking,
         Thinking,
         Listening,
         Following,
-        Dormant
+        Moving
+        
     }
 
     [HideInInspector]
@@ -30,11 +33,6 @@ public class MasterStateManager : MonoBehaviour
         SizeManager();
     }
 
-    private void Update()
-    {
-       // SizeManager();
-    }
-
 
     public void ChangeState(AgentState newState)
     {
@@ -42,8 +40,14 @@ public class MasterStateManager : MonoBehaviour
 
         switch (newState)
         {
-            case AgentState.Moving:
-                Move();
+            case AgentState.Dormant:
+                dormant();
+                break;
+            case AgentState.Dreaming:
+                dreaming();
+                break;
+            case AgentState.Talking:
+                talking();
                 break;
             case AgentState.Thinking:
                 Thinking();
@@ -54,8 +58,8 @@ public class MasterStateManager : MonoBehaviour
             case AgentState.Following:
                 Follow();
                 break;
-            case AgentState.Dormant:
-                dormant();
+            case AgentState.Moving:
+                Move();
                 break;
         }
     }
@@ -92,16 +96,14 @@ public class MasterStateManager : MonoBehaviour
     {
         Sub_VFX.SineOn();
         Sub_VFX.fastOn();
+        Sub_VFX.TalkingOff();
 
+        Sub_VFX.turbulenceOff();
         Sub_Movement.stopFollow();
         Sub_Movement.stopMovement();
 
         SizeManager();
-
-        // pulsing lines
     }
-
-
 
     public void Move()
     {
@@ -115,36 +117,62 @@ public class MasterStateManager : MonoBehaviour
         }
         SizeManager();
 
-        // idle drifitng around
     }
-
 
 
     public void Thinking()
     {
         Sub_VFX.SineOn();
         Sub_VFX.slowOn();
+        Sub_VFX.TalkingOff();
 
+        Sub_VFX.turbulenceOff();
         Sub_Movement.stopFollow();
         Sub_Movement.stopMovement();
 
         SizeManager();
 
-        // slow pulse
     }
 
     public void dormant()
     {
         Sub_VFX.SineOff();
-
+        Sub_VFX.TalkingOff();
+        Sub_VFX.turbulenceOff();
         Sub_Movement.stopFollow();
         Sub_Movement.stopMovement();
 
         SizeManager();
 
-        // agen is dormant
+    }
+    public void dreaming()
+    {
+        Sub_VFX.SlowFastDreaming();
+        Sub_VFX.SineOffOnDreaming();
+        Sub_VFX.turbulenceOn();
+        Sub_VFX.TalkingOff();
+        Sub_Movement.stopFollow();
+        Sub_Movement.stopMovement();
+
+
+        SizeManager();
+
+    }
+    public void talking()
+    {
+        Sub_VFX.SineOn();
+        Sub_VFX.fastOn();
+        Sub_VFX.TalkingOn();
+        Sub_VFX.turbulenceOff();
+        Sub_Movement.stopFollow();
+        Sub_Movement.stopMovement();
+        
+
+
+        SizeManager();
+     
     }
 
-    
+
 
 }

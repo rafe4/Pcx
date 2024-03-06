@@ -14,7 +14,6 @@ public class Sub_ColourManager : MonoBehaviour
         AddColor("introspectiveMagenta", "#F434FF");
         AddColor("sadBlue", "#4AA8FF");
 
-        
     }
 
     void AddColor(string name, string hex)

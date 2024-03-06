@@ -6,10 +6,14 @@ using DG.Tweening;
 
 public class MasterEmotion : MonoBehaviour
 {
-
-    public Material emotionSphereMat;
-    public Sub_ColourManager colourLibrary;
     public float emotionIntensity = 1f;
+    public Sub_VFX vfxScript;
+    public Sub_MaterialEditor materialScript;
+
+    [HideInInspector]
+    public float excitedOpacityValue = 0.8f;
+    public float introspectiveOpacityValue = 0.6f;
+    public float sadOpacityValue = 0.3f;
 
     public enum Emotion
     {
@@ -18,12 +22,20 @@ public class MasterEmotion : MonoBehaviour
         Sad
     }
 
+    private Dictionary<Emotion, string> emotionGuidanceStrings = new Dictionary<Emotion, string>()
+    {
+        { Emotion.Sad, "now please respond in a subtle way acting as if you the ai system were slightly sad with shorter responses" },
+        { Emotion.Introspective, "now please respond in a subtle way acting as if you the ai system were  slightly introspective and curious with short to medium length responses" },
+        { Emotion.Excited, "now please respond in a subtle way acting as if you the ai system were  slightly excited and energetic with short to medium length responses." }
+        // Add more as necessary
+    };
+
     [HideInInspector]
     public Emotion currentEmotion;
 
     void Start()
     {
-        currentEmotion = Emotion.Excited;
+        //currentEmotion = Emotion.Excited;
         ApplyCurrentEmotion();
 
     }
@@ -31,7 +43,6 @@ public class MasterEmotion : MonoBehaviour
     public void UpdateEmotion(Emotion newEmotion)
     {
         currentEmotion = newEmotion;
-        //emotionIntensity = intensity; // Ensure this is being set correctly
         ApplyCurrentEmotion();
     }
 
@@ -56,74 +67,60 @@ public class MasterEmotion : MonoBehaviour
     }
 
 
+    public string GetCurrentEmotionGuidance()
+    {
+        if (emotionGuidanceStrings.TryGetValue(currentEmotion, out string guidance))
+        {
+            return guidance;
+        }
+
+        return "";
+    }
+
+    // emotion fucntions ------------------------------------------------------------------
 
     public void Excited()
     {
-
-        
-        if (colourLibrary.colors.ContainsKey("excitedOrange"))
+        if (materialScript.colourLibrary.colors.ContainsKey("excitedOrange"))
         {
-            Color excitedOrange = colourLibrary.colors["excitedOrange"];
-            changeColour(excitedOrange);
+            Color excitedOrange = materialScript.colourLibrary.colors["excitedOrange"];
+            materialScript.changeColour(excitedOrange);
         }
 
-        changeOpacity(0.7f);
-
-
+        materialScript.changeOpacity(excitedOpacityValue);
         emotionIntensity = 1f;
-
+        vfxScript.SetGradientColour1();
     }
+
 
     public void Introspective()
     {
-
-       
-
-        if (colourLibrary.colors.ContainsKey("introspectiveMagenta"))
+        if (materialScript.colourLibrary.colors.ContainsKey("introspectiveMagenta"))
         {
-            Color introspectiveMagenta = colourLibrary.colors["introspectiveMagenta"];
-            changeColour(introspectiveMagenta);
+            Color introspectiveMagenta = materialScript.colourLibrary.colors["introspectiveMagenta"];
+            materialScript.changeColour(introspectiveMagenta);
         }
 
-        changeOpacity(0.5f);
-
-
+        materialScript.changeOpacity(introspectiveOpacityValue);
         emotionIntensity = 0.85f;
-
-        
+        vfxScript.SetGradientColour2();
 
     }
+
+
     public void Sad()
     {
-        if (colourLibrary.colors.ContainsKey("sadBlue"))
+        if (materialScript.colourLibrary.colors.ContainsKey("sadBlue"))
         {
-            Color sadblue = colourLibrary.colors["sadBlue"];
-            changeColour(sadblue);
+            Color sadblue = materialScript.colourLibrary.colors["sadBlue"];
+            materialScript.changeColour(sadblue);
         }
 
-        changeOpacity(0.3f);
-
+        materialScript.changeOpacity(sadOpacityValue);
         emotionIntensity = 0.65f;
+        vfxScript.SetGradientColour3();
     }
 
-    void changeColour(Color color)
-    {
-
-        DOTween.To(() => emotionSphereMat.GetColor("_InnerColour"),
-                x => emotionSphereMat.SetColor("_InnerColour", x),
-                color,
-                1f)
-                .SetEase(Ease.InOutSine);
-    }
-
-    void changeOpacity(float opacity)
-    {
-        DOTween.To(() => emotionSphereMat.GetFloat("_OverallOpacity"),
-                x => emotionSphereMat.SetFloat("_OverallOpacity", x),
-                opacity,
-                1f)
-                .SetEase(Ease.InOutSine);
-    }
 
 
 

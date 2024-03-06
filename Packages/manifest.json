@@ -6,10 +6,20 @@
       "scopes": [
         "jp.keijiro"
       ]
+    },
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.openai",
+        "com.rest.elevenlabs",
+        "com.utilities"
+      ]
     }
   ],
   "dependencies": {
-    "com.srcnalt.openai-unity": "https://github.com/srcnalt/OpenAI-Unity.git",
+    "com.openai.unity": "7.3.6",
+    "com.rest.elevenlabs": "3.2.8",
     "com.unity.2d.animation": "9.0.4",
     "com.unity.ai.navigation": "1.1.5",
     "com.unity.formats.fbx": "4.2.1",
@@ -22,6 +32,7 @@
     "com.unity.timeline": "1.7.6",
     "com.unity.visualeffectgraph": "14.0.9",
     "com.unity.visualscripting": "1.9.1",
+    "com.utilities.buildpipeline": "1.2.2",
     "jp.keijiro.pcx": "1.0.1",
     "com.unity.modules.imgui": "1.0.0",
     "com.unity.modules.physics2d": "1.0.0",

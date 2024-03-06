@@ -111,7 +111,7 @@ Material:
     - _Metallic: 0
     - _MouthOn: 0
     - _OcclusionStrength: 1
-    - _OverallOpacity: 0.7
+    - _OverallOpacity: 0.8
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: -1
@@ -127,6 +127,7 @@ Material:
     - _emission_on: 0
     - _eyesBlack: 0
     - _isPulsing: 0
+    - _isYFade: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BrightnessControl: {r: 1, g: 0, b: 0, a: 0}
